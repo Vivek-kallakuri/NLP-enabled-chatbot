@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: ./backend
+    container_name: chatbot-backend
+    ports:
+      - "49151:49151"
+    volumes:
+      - ./backend/app:/app/app
+      
+  frontend:
+    build: ./frontend
+    container_name: chatbot-frontend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./frontend/src:/app/src
